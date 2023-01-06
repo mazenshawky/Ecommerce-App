@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../presentation/home/home_screen.dart';
+import '../presentation/main/main_screen.dart';
 
 class EcommerceApp extends StatelessWidget {
   const EcommerceApp({super.key});
@@ -13,7 +13,7 @@ class EcommerceApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const MainScreen(),
     );
   }
 }
