@@ -3,6 +3,6 @@ import 'package:ecommerce_app/modules/products/domain/entities/product.dart';
 
 import '../../../../core/error/failure.dart';
 
-abstract class BaseProductsRepository {
+abstract class ProductsRepository {
   Future<Either<Failure, List<Product>>> getAllProducts();
 }
