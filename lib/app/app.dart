@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../presentation/main/main_screen.dart';
+import '../modules/products/presentation/main/main_screen.dart';
 
 class EcommerceApp extends StatelessWidget {
   const EcommerceApp({super.key});

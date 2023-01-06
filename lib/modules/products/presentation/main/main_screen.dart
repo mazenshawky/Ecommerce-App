@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/core/utils/app_colors.dart';
-import 'package:ecommerce_app/presentation/main/pages/cart_page.dart';
-import 'package:ecommerce_app/presentation/main/pages/checkout_page.dart';
-import 'package:ecommerce_app/presentation/main/pages/home_page.dart';
+import 'package:ecommerce_app/modules/products/presentation/main/pages/cart_page.dart';
+import 'package:ecommerce_app/modules/products/presentation/main/pages/checkout_page.dart';
+import 'package:ecommerce_app/modules/products/presentation/main/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
