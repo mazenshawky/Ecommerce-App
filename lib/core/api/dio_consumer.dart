@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
-import 'package:ecommerce_app/core/api/api_constants.dart';
+import 'package:ecommerce_app/core/api/end_points.dart';
 import 'package:ecommerce_app/core/api/api_consumer.dart';
 import 'package:ecommerce_app/core/api/app_interceptors.dart';
 import 'package:ecommerce_app/core/api/status_code.dart';
@@ -20,7 +20,7 @@ class DioConsumer implements ApiConsumer {
       return client;
     };
     client.options
-      ..baseUrl = ApiConstants.baseUrl
+      ..baseUrl = EndPoints.baseUrl
       ..responseType = ResponseType.plain
       ..followRedirects = false
       ..validateStatus = (status) => status != StatusCode.internalServerError;
