@@ -29,7 +29,7 @@ class RatingModel extends Rating {
   });
 
   factory RatingModel.fromJson(Map<String, dynamic> json) => RatingModel(
-        rate: json['rate'],
+        rate: json['rate'].toDouble(),
         count: json['count'],
       );
 }
