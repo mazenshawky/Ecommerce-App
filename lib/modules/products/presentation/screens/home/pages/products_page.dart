@@ -3,21 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../cubit/products/products_cubit.dart';
 
-class ProductsPage extends StatefulWidget {
+class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key});
-
-  @override
-  State<ProductsPage> createState() => _ProductsPageState();
-}
-
-class _ProductsPageState extends State<ProductsPage> {
-  _getAllProducts() => BlocProvider.of<ProductsCubit>(context).getAllProducts();
-
-  @override
-  void initState() {
-    super.initState();
-    _getAllProducts();
-  }
 
   @override
   Widget build(BuildContext context) {

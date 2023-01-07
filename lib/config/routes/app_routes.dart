@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce_app/core/utils/app_strings.dart';
 import 'package:ecommerce_app/app/injection_container.dart' as di;
 
+import '../../modules/products/presentation/cubit/cart/cart_cubit.dart';
 import '../../modules/products/presentation/cubit/products/products_cubit.dart';
 
 class Routes {
@@ -15,8 +16,15 @@ class AppRoutes {
     switch (routeSettings.name) {
       case Routes.initialRoute:
         return MaterialPageRoute(
-            builder: ((context) => BlocProvider(
-                  create: (context) => di.sl<ProductsCubit>(),
+            builder: ((context) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider(
+                      create: (context) => di.sl<ProductsCubit>(),
+                    ),
+                    BlocProvider(
+                      create: (context) => di.sl<CartCubit>(),
+                    ),
+                  ],
                   child: const HomeScreen(),
                 )));
       default:

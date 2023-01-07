@@ -4,6 +4,10 @@ import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/c
 import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/checkout_page.dart';
 import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/products_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../cubit/cart/cart_cubit.dart';
+import '../../cubit/products/products_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +17,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  _getAllProducts() async =>
+      await BlocProvider.of<ProductsCubit>(context).getAllProducts();
+
+  _getCart() async => await BlocProvider.of<CartCubit>(context).getCart();
+
+  @override
+  void initState() {
+    super.initState();
+    _getAllProducts();
+    _getCart();
+  }
+
   List<Widget> pages = const [
     ProductsPage(),
     CartPage(),

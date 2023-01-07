@@ -7,6 +7,8 @@ import 'package:ecommerce_app/modules/products/data/datasource/products_remote_d
 import 'package:ecommerce_app/modules/products/data/repository/products_repository_impl.dart';
 import 'package:ecommerce_app/modules/products/domain/repository/products_repository.dart';
 import 'package:ecommerce_app/modules/products/domain/usecases/get_all_products_usecase.dart';
+import 'package:ecommerce_app/modules/products/domain/usecases/get_cart_usecase.dart';
+import 'package:ecommerce_app/modules/products/presentation/cubit/cart/cart_cubit.dart';
 import '../modules/products/presentation/cubit/products/products_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -21,10 +23,13 @@ Future<void> init() async {
   // Blocs
   sl.registerFactory<ProductsCubit>(
       () => ProductsCubit(getAllProductsUseCase: sl()));
+  sl.registerFactory<CartCubit>(() => CartCubit(getCartUseCase: sl()));
 
   // Use Cases
   sl.registerLazySingleton<GetAllProductsUseCase>(
       () => GetAllProductsUseCase(baseProductsRepository: sl()));
+  sl.registerLazySingleton<GetCartUseCase>(
+      () => GetCartUseCase(baseProductsRepository: sl()));
 
   // Repositories
   sl.registerLazySingleton<ProductsRepository>(() => ProductsRepositoryImpl(
