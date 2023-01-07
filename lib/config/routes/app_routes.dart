@@ -1,4 +1,6 @@
+import 'package:ecommerce_app/modules/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:ecommerce_app/modules/products/presentation/screens/home/home_screen.dart';
+import 'package:ecommerce_app/modules/products/presentation/screens/product_details/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce_app/core/utils/app_strings.dart';
@@ -9,6 +11,7 @@ import '../../modules/products/presentation/cubit/products/products_cubit.dart';
 
 class Routes {
   static const String initialRoute = '/';
+  static const String productDetailsRoute = '/product-details';
 }
 
 class AppRoutes {
@@ -27,6 +30,13 @@ class AppRoutes {
                   ],
                   child: const HomeScreen(userId: 2),
                 )));
+      case Routes.productDetailsRoute:
+        final productId = routeSettings.arguments;
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => di.sl<ProductDetailsCubit>(),
+                  child: ProductDetailsScreen(productId: productId),
+                ));
       default:
         return undefinedRoute();
     }

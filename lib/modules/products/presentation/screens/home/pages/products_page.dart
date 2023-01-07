@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../config/routes/app_routes.dart';
 import '../../../cubit/products/products_cubit.dart';
 
 class ProductsPage extends StatelessWidget {
@@ -19,7 +20,12 @@ class ProductsPage extends StatelessWidget {
             child: Text(state.message),
           );
         } else if (state is ProductsLoaded) {
-          return Container();
+          return ElevatedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushNamed(Routes.productDetailsRoute, arguments: 2);
+              },
+              child: const Text('test'));
         } else {
           return const Center(
             child: CircularProgressIndicator(),
