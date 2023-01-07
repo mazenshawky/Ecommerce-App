@@ -1,6 +1,7 @@
+import 'package:ecommerce_app/config/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
-import '../modules/products/presentation/screens/main/main_screen.dart';
+import '../core/utils/app_strings.dart';
 
 class EcommerceApp extends StatelessWidget {
   const EcommerceApp({super.key});
@@ -8,12 +9,12 @@ class EcommerceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ecommerce App',
+      title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MainScreen(),
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
