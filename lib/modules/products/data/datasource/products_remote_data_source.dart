@@ -6,10 +6,10 @@ abstract class ProductsRemoteDataSource {
   Future<List<ProductModel>> getAllProducts();
 }
 
-class ProductRemoteDataSourceImpl implements ProductsRemoteDataSource {
+class ProductsRemoteDataSourceImpl implements ProductsRemoteDataSource {
   ApiConsumer apiConsumer;
 
-  ProductRemoteDataSourceImpl({required this.apiConsumer});
+  ProductsRemoteDataSourceImpl({required this.apiConsumer});
 
   @override
   Future<List<ProductModel>> getAllProducts() async {
