@@ -7,7 +7,7 @@ import 'package:ecommerce_app/modules/products/data/datasource/products_remote_d
 import 'package:ecommerce_app/modules/products/data/repository/products_repository_impl.dart';
 import 'package:ecommerce_app/modules/products/domain/repository/products_repository.dart';
 import 'package:ecommerce_app/modules/products/domain/usecases/get_all_products_usecase.dart';
-import 'package:ecommerce_app/modules/products/presentation/cubit/products_cubit.dart';
+import '../modules/products/presentation/cubit/products/products_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';

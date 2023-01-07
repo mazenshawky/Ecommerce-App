@@ -5,9 +5,9 @@ import 'package:ecommerce_app/core/usecases/base_usecase.dart';
 import 'package:ecommerce_app/modules/products/domain/usecases/get_all_products_usecase.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../../core/error/failure.dart';
-import '../../../../core/utils/app_strings.dart';
-import '../../domain/entities/product.dart';
+import '../../../../../../../core/error/failure.dart';
+import '../../../../../../../core/utils/app_strings.dart';
+import '../../../domain/entities/product.dart';
 
 part 'products_state.dart';
 

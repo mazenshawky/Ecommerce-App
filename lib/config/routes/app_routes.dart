@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce_app/core/utils/app_strings.dart';
 import 'package:ecommerce_app/app/injection_container.dart' as di;
 
-import '../../modules/products/presentation/cubit/products_cubit.dart';
+import '../../modules/products/presentation/cubit/products/products_cubit.dart';
 
 class Routes {
   static const String initialRoute = '/';

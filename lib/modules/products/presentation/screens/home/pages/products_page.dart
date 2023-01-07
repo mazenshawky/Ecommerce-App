@@ -1,6 +1,7 @@
-import 'package:ecommerce_app/modules/products/presentation/cubit/products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../cubit/products/products_cubit.dart';
 
 class ProductsPage extends StatefulWidget {
   const ProductsPage({super.key});
