@@ -6,7 +6,6 @@ import 'package:ecommerce_app/modules/products/domain/usecases/get_cart_usecase.
 import 'package:equatable/equatable.dart';
 
 import '../../../../../core/error/failure.dart';
-import '../../../../../core/usecases/base_usecase.dart';
 import '../../../../../core/utils/constants.dart';
 
 part 'cart_state.dart';
@@ -15,9 +14,10 @@ class CartCubit extends Cubit<CartState> {
   final GetCartUseCase getCartUseCase;
   CartCubit({required this.getCartUseCase}) : super(CartInitial());
 
-  Future<void> getCart() async {
+  Future<void> getCart(int userId) async {
     emit(CartLoading());
-    Either<Failure, Cart> response = await getCartUseCase(const NoParameters());
+    Either<Failure, Cart> response =
+        await getCartUseCase(CartParameters(userId: userId));
 
     emit(response.fold(
         (failure) => CartError(message: Constants.mapFailureToMsg(failure)),

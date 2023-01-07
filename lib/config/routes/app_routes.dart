@@ -25,7 +25,7 @@ class AppRoutes {
                       create: (context) => di.sl<CartCubit>(),
                     ),
                   ],
-                  child: const HomeScreen(),
+                  child: const HomeScreen(userId: 2),
                 )));
       default:
         return undefinedRoute();

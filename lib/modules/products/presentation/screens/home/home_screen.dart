@@ -10,7 +10,8 @@ import '../../cubit/cart/cart_cubit.dart';
 import '../../cubit/products/products_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final int userId;
+  const HomeScreen({super.key, required this.userId});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -20,7 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
   _getAllProducts() async =>
       await BlocProvider.of<ProductsCubit>(context).getAllProducts();
 
-  _getCart() async => await BlocProvider.of<CartCubit>(context).getCart();
+  _getCart() async =>
+      await BlocProvider.of<CartCubit>(context).getCart(widget.userId);
 
   @override
   void initState() {

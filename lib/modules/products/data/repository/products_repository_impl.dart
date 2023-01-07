@@ -6,6 +6,7 @@ import 'package:ecommerce_app/modules/products/data/datasource/products_remote_d
 import 'package:ecommerce_app/modules/products/domain/entities/cart.dart';
 import 'package:ecommerce_app/modules/products/domain/entities/product.dart';
 import 'package:ecommerce_app/modules/products/domain/repository/products_repository.dart';
+import 'package:ecommerce_app/modules/products/domain/usecases/get_cart_usecase.dart';
 
 class ProductsRepositoryImpl implements ProductsRepository {
   final NetworkInfo networkInfo;
@@ -31,10 +32,10 @@ class ProductsRepositoryImpl implements ProductsRepository {
   }
 
   @override
-  Future<Either<Failure, Cart>> getCart() async {
+  Future<Either<Failure, Cart>> getCart(CartParameters parameters) async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteCart = await productsRemoteDataSource.getCart();
+        final remoteCart = await productsRemoteDataSource.getCart(parameters);
         return Right(remoteCart);
       } on ServerException {
         return Left(ServerFailure());
