@@ -3,6 +3,7 @@ import 'package:ecommerce_app/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_app/core/network/network_info.dart';
 import 'package:ecommerce_app/modules/products/data/datasource/products_remote_data_source.dart';
+import 'package:ecommerce_app/modules/products/domain/entities/cart.dart';
 import 'package:ecommerce_app/modules/products/domain/entities/product.dart';
 import 'package:ecommerce_app/modules/products/domain/repository/products_repository.dart';
 
@@ -21,6 +22,20 @@ class ProductsRepositoryImpl implements ProductsRepository {
       try {
         final remoteProducts = await productsRemoteDataSource.getAllProducts();
         return Right(remoteProducts);
+      } on ServerException {
+        return Left(ServerFailure());
+      }
+    } else {
+      return Left(InternetFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, Cart>> getCart() async {
+    if (await networkInfo.isConnected) {
+      try {
+        final remoteCart = await productsRemoteDataSource.getCart();
+        return Right(remoteCart);
       } on ServerException {
         return Left(ServerFailure());
       }
