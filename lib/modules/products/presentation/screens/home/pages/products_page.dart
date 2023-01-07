@@ -2,14 +2,14 @@ import 'package:ecommerce_app/modules/products/presentation/cubit/products_cubit
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ProductsPage extends StatefulWidget {
+  const ProductsPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ProductsPage> createState() => _ProductsPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ProductsPageState extends State<ProductsPage> {
   _getAllProducts() => BlocProvider.of<ProductsCubit>(context).getAllProducts();
 
   @override

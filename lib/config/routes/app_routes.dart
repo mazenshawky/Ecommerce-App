@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/modules/products/presentation/screens/main/main_screen.dart';
+import 'package:ecommerce_app/modules/products/presentation/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce_app/core/utils/app_strings.dart';
@@ -17,7 +17,7 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: ((context) => BlocProvider(
                   create: (context) => di.sl<ProductsCubit>(),
-                  child: const MainScreen(),
+                  child: const HomeScreen(),
                 )));
       default:
         return undefinedRoute();

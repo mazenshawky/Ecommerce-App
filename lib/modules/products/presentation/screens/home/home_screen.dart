@@ -1,30 +1,31 @@
 import 'package:ecommerce_app/core/utils/app_colors.dart';
-import 'package:ecommerce_app/modules/products/presentation/screens/main/pages/cart_page.dart';
-import 'package:ecommerce_app/modules/products/presentation/screens/main/pages/checkout_page.dart';
-import 'package:ecommerce_app/modules/products/presentation/screens/main/pages/home_page.dart';
+import 'package:ecommerce_app/core/utils/app_strings.dart';
+import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/cart_page.dart';
+import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/checkout_page.dart';
+import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/products_page.dart';
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = const [
-    HomePage(),
+    ProductsPage(),
     CartPage(),
     CheckoutPage(),
   ];
 
   List<String> titles = [
-    'Home Page',
-    'Cart Page',
-    'Checkout Page',
+    AppStrings.products,
+    AppStrings.cart,
+    AppStrings.checkout,
   ];
 
-  String _title = 'Home';
+  String _title = AppStrings.products;
   var _currentIndex = 0;
 
   onTap(int index) {
@@ -57,11 +58,11 @@ class _MainScreenState extends State<MainScreen> {
           onTap: onTap,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined), label: 'Home'),
+                icon: Icon(Icons.home_outlined), label: AppStrings.products),
             BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart), label: 'Cart'),
+                icon: Icon(Icons.shopping_cart), label: AppStrings.cart),
             BottomNavigationBarItem(
-                icon: Icon(Icons.payment), label: 'Checkout'),
+                icon: Icon(Icons.payment), label: AppStrings.checkout),
           ],
         ),
       ),
