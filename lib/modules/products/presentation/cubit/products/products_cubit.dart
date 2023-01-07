@@ -6,7 +6,7 @@ import 'package:ecommerce_app/modules/products/domain/usecases/get_all_products_
 import 'package:equatable/equatable.dart';
 
 import '../../../../../../../core/error/failure.dart';
-import '../../../../../../../core/utils/app_strings.dart';
+import '../../../../../core/utils/constants.dart';
 import '../../../domain/entities/product.dart';
 
 part 'products_state.dart';
@@ -22,20 +22,7 @@ class ProductsCubit extends Cubit<ProductsState> {
         await getAllProductsUseCase(const NoParameters());
 
     emit(response.fold(
-        (failure) => ProductsError(message: _mapFailureToMsg(failure)),
+        (failure) => ProductsError(message: Constants.mapFailureToMsg(failure)),
         (products) => ProductsLoaded(products: products)));
-  }
-
-  String _mapFailureToMsg(Failure failure) {
-    switch (failure.runtimeType) {
-      case ServerFailure:
-        return AppStrings.serverFailure;
-      case CacheFailure:
-        return AppStrings.cacheFailure;
-      case InternetFailure:
-        return AppStrings.internetFailure;
-      default:
-        return AppStrings.unexpectedError;
-    }
   }
 }
