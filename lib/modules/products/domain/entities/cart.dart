@@ -1,19 +1,27 @@
-class Cart {
+import 'package:equatable/equatable.dart';
+
+class Cart extends Equatable {
   final int id;
   final List<CartProduct> cartProducts;
 
-  Cart({
+  const Cart({
     required this.id,
     required this.cartProducts,
   });
+
+  @override
+  List<Object?> get props => [id, cartProducts];
 }
 
-class CartProduct {
+class CartProduct extends Equatable {
   final int productId;
   final int quantity;
 
-  CartProduct({
+  const CartProduct({
     required this.productId,
     required this.quantity,
   });
+
+  @override
+  List<Object?> get props => [productId, quantity];
 }
