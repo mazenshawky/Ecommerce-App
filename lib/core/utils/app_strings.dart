@@ -10,4 +10,5 @@ class AppStrings {
   static const String products = 'Products';
   static const String cart = 'Cart';
   static const String checkout = 'Checkout';
+  static const String search = 'Search';
 }
