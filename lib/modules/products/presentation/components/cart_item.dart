@@ -76,8 +76,11 @@ class CartItem extends StatelessWidget {
                               ),
                               child: InkWell(
                                   onTap: () {},
-                                  child:
-                                      const Center(child: Icon(Icons.remove))),
+                                  child: const Center(
+                                      child: Icon(
+                                    Icons.remove,
+                                    color: AppColors.primary,
+                                  ))),
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(
@@ -98,7 +101,11 @@ class CartItem extends StatelessWidget {
                               ),
                               child: InkWell(
                                   onTap: () {},
-                                  child: const Center(child: Icon(Icons.add))),
+                                  child: const Center(
+                                      child: Icon(
+                                    Icons.add,
+                                    color: AppColors.primary,
+                                  ))),
                             ),
                           ],
                         ),

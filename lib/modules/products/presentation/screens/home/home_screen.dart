@@ -63,7 +63,6 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(
           _title,
-          style: Theme.of(context).textTheme.titleSmall,
         ),
       ),
       body: pages[_currentIndex],

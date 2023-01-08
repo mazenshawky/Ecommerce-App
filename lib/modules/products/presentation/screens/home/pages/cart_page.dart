@@ -16,8 +16,15 @@ class CartPage extends StatelessWidget {
   Widget _buildTotalPrice(BuildContext context, List<Product> products) {
     final total =
         BlocProvider.of<CartCubit>(context).calculateCartTotalPrice(products);
-    return Center(
-      child: Text('${AppStrings.totalPrice}\$$total'),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(AppStrings.totalPrice),
+        Text(
+          '\$$total',
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ],
     );
   }
 
@@ -42,6 +49,7 @@ class CartPage extends StatelessWidget {
           return Column(
             children: [
               _buildTotalPrice(context, filteredProducts),
+              const SizedBox(height: AppSize.s10),
               Expanded(
                 child: ListView.separated(
                     itemBuilder: (context, index) => CartItem(

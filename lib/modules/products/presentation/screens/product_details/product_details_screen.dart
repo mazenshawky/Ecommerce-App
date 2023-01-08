@@ -71,12 +71,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.transparentColor,
-        title: Text(
+        title: const Text(
           AppStrings.productDetails,
-          style: Theme.of(context).textTheme.titleSmall,
         ),
         leading: const BackButton(
-          color: AppColors.blackColor,
+          color: AppColors.primary,
         ),
       ),
       body: BlocBuilder<ProductDetailsCubit, ProductDetailsState>(

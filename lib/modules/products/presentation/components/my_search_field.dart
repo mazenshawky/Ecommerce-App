@@ -24,7 +24,7 @@ class _MySearchFieldState extends State<MySearchField> {
 
   @override
   Widget build(BuildContext context) {
-    const styleActive = TextStyle(color: AppColors.blackColor);
+    const styleActive = TextStyle(color: AppColors.primary);
     const styleHint = TextStyle(color: AppColors.blackColor54);
     final style = widget.text.isEmpty ? styleHint : styleActive;
 
