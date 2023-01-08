@@ -6,6 +6,7 @@ import 'package:ecommerce_app/modules/products/presentation/cubit/product_detail
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../config/locale/app_localizations.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../domain/entities/product.dart';
 
@@ -71,8 +72,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.transparentColor,
-        title: const Text(
-          AppStrings.productDetails,
+        title: Text(
+          AppLocalizations.of(context)!.translate(AppStrings.productDetails)!,
         ),
         leading: const BackButton(
           color: AppColors.primary,
@@ -112,7 +113,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           _buildTitleAndPriceWidget(state.productDetails),
                           _buildDescription(state.productDetails),
                           const SizedBox(height: AppPadding.p24),
-                          const MyButton(text: AppStrings.addToCart),
+                          MyButton(
+                            text: AppLocalizations.of(context)!
+                                .translate(AppStrings.addToCart)!,
+                          ),
                         ],
                       ),
                     ),

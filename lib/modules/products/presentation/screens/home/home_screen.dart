@@ -7,6 +7,7 @@ import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/s
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../config/locale/app_localizations.dart';
 import '../../cubit/cart/cart_cubit.dart';
 import '../../cubit/products/products_cubit.dart';
 
@@ -62,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          _title,
+          AppLocalizations.of(context)!.translate(_title)!,
         ),
       ),
       body: pages[_currentIndex],
@@ -77,15 +78,26 @@ class _HomeScreenState extends State<HomeScreen> {
           unselectedItemColor: AppColors.grey,
           currentIndex: _currentIndex,
           onTap: onTap,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined), label: AppStrings.products),
+              icon: const Icon(Icons.home_outlined),
+              label:
+                  AppLocalizations.of(context)!.translate(AppStrings.products)!,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart), label: AppStrings.cart),
+              icon: const Icon(Icons.shopping_cart),
+              label: AppLocalizations.of(context)!.translate(AppStrings.cart)!,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.payment), label: AppStrings.checkout),
+              icon: const Icon(Icons.payment),
+              label:
+                  AppLocalizations.of(context)!.translate(AppStrings.checkout)!,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: AppStrings.settings),
+              icon: const Icon(Icons.settings),
+              label:
+                  AppLocalizations.of(context)!.translate(AppStrings.settings)!,
+            ),
           ],
         ),
       ),
