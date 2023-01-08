@@ -5,6 +5,7 @@ import 'package:ecommerce_app/modules/products/presentation/components/my_divide
 import 'package:ecommerce_app/modules/products/presentation/components/my_header.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../config/locale/app_localizations.dart';
 import '../../../../../../core/utils/app_values.dart';
 import '../../../components/my_text_field.dart';
 
@@ -78,32 +79,43 @@ class _CheckoutPageState extends State<CheckoutPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const MyHeader(text: AppStrings.shippingAddress),
+          MyHeader(
+            text: AppLocalizations.of(context)!
+                .translate(AppStrings.shippingAddress)!,
+          ),
           const SizedBox(height: AppSize.s10),
           MyTextField(
             controller: countryController,
-            invalidInput: AppStrings.countryInvalid,
-            hintText: AppStrings.country,
+            invalidInput: AppLocalizations.of(context)!
+                .translate(AppStrings.countryInvalid)!,
+            hintText:
+                AppLocalizations.of(context)!.translate(AppStrings.country)!,
           ),
           const SizedBox(height: AppSize.s10),
           MyTextField(
             controller: cityController,
-            invalidInput: AppStrings.cityInvalid,
-            hintText: AppStrings.city,
+            invalidInput: AppLocalizations.of(context)!
+                .translate(AppStrings.cityInvalid)!,
+            hintText: AppLocalizations.of(context)!.translate(AppStrings.city)!,
           ),
           const SizedBox(height: AppSize.s10),
           MyTextField(
             controller: zipCodeController,
-            invalidInput: AppStrings.zipCodeInvalid,
-            hintText: AppStrings.zipCode,
+            invalidInput: AppLocalizations.of(context)!
+                .translate(AppStrings.zipCodeInvalid)!,
+            hintText:
+                AppLocalizations.of(context)!.translate(AppStrings.zipCode)!,
             textInputType: TextInputType.number,
           ),
           const SizedBox(height: 50),
-          const MyHeader(text: AppStrings.paymentMethod),
+          MyHeader(
+            text: AppLocalizations.of(context)!
+                .translate(AppStrings.paymentMethod)!,
+          ),
           _buildPaymentMethodListView(),
           const SizedBox(height: AppSize.s10),
           MyButton(
-            text: AppStrings.pay,
+            text: AppLocalizations.of(context)!.translate(AppStrings.pay)!,
             onPress: () => _pay(),
           ),
           const SizedBox(height: AppSize.s13),

@@ -4,6 +4,7 @@ import 'package:ecommerce_app/modules/products/presentation/cubit/products/produ
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../config/locale/app_localizations.dart';
 import '../../../../../../core/utils/app_strings.dart';
 import '../../../../../../core/utils/app_values.dart';
 import '../../../../domain/entities/product.dart';
@@ -63,7 +64,10 @@ class CartPage extends StatelessWidget {
                         ),
                     itemCount: filteredProducts.length),
               ),
-              const MyButton(text: AppStrings.checkout),
+              MyButton(
+                text: AppLocalizations.of(context)!
+                    .translate(AppStrings.checkout)!,
+              ),
               const SizedBox(height: AppSize.s13),
             ],
           );

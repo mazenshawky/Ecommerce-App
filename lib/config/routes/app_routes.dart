@@ -8,6 +8,7 @@ import 'package:ecommerce_app/app/injection_container.dart' as di;
 
 import '../../modules/products/presentation/cubit/cart/cart_cubit.dart';
 import '../../modules/products/presentation/cubit/products/products_cubit.dart';
+import '../locale/app_localizations.dart';
 
 class Routes {
   static const String initialRoute = '/';
@@ -32,6 +33,7 @@ class AppRoutes {
                   // child: HomeScreen(userId: userId),
                   child: const HomeScreen(userId: 2),
                 )));
+
       case Routes.productDetailsRoute:
         final productId = routeSettings.arguments;
         return MaterialPageRoute(
@@ -46,8 +48,12 @@ class AppRoutes {
 
   static Route<dynamic> undefinedRoute() {
     return MaterialPageRoute(
-        builder: ((context) => const Scaffold(
-              body: Center(child: Text(AppStrings.noRouteFound)),
+        builder: ((context) => Scaffold(
+              body: Center(
+                  child: Text(
+                AppLocalizations.of(context)!
+                    .translate(AppStrings.noRouteFound)!,
+              )),
             )));
   }
 }

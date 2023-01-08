@@ -3,6 +3,7 @@ import 'package:ecommerce_app/modules/products/presentation/components/my_search
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../config/locale/app_localizations.dart';
 import '../../../../../../core/utils/app_strings.dart';
 import '../../../../domain/entities/product.dart';
 import '../../../cubit/products/products_cubit.dart';
@@ -46,7 +47,8 @@ class _ProductsPageState extends State<ProductsPage> {
               MySearchField(
                 text: _text,
                 onChanged: (text) => setState(() => _text = text),
-                hintText: AppStrings.search,
+                hintText:
+                    AppLocalizations.of(context)!.translate(AppStrings.search)!,
               ),
               MyGridView(products: products),
             ],
