@@ -52,7 +52,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               onChanged: (i) => setState(() => value = i),
             ),
             title: Text(
-              paymentLabels[index],
+              AppLocalizations.of(context)!.translate(paymentLabels[index])!,
             ),
             trailing: Icon(paymentIcons[index], color: AppColors.primary),
           );

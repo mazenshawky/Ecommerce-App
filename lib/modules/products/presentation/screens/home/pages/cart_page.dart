@@ -20,7 +20,9 @@ class CartPage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(AppStrings.totalPrice),
+        Text(AppLocalizations.of(context)!.translate(
+          AppStrings.totalPrice,
+        )!),
         Text(
           '\$$total',
           style: Theme.of(context).textTheme.bodyLarge,
