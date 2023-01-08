@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/modules/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:ecommerce_app/modules/products/presentation/screens/home/home_screen.dart';
 import 'package:ecommerce_app/modules/products/presentation/screens/product_details/product_details_screen.dart';
+import 'package:ecommerce_app/modules/splash/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce_app/core/utils/app_strings.dart';
@@ -11,6 +12,7 @@ import '../../modules/products/presentation/cubit/products/products_cubit.dart';
 
 class Routes {
   static const String initialRoute = '/';
+  static const String homeRoute = '/home';
   static const String productDetailsRoute = '/product-details';
 }
 
@@ -18,6 +20,9 @@ class AppRoutes {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.initialRoute:
+        return MaterialPageRoute(builder: ((context) => const SplashScreen()));
+
+      case Routes.homeRoute:
         // final userId = routeSettings.arguments;
         return MaterialPageRoute(
             builder: ((context) => MultiBlocProvider(
@@ -32,6 +37,7 @@ class AppRoutes {
                   // child: HomeScreen(userId: userId),
                   child: const HomeScreen(userId: 2),
                 )));
+
       case Routes.productDetailsRoute:
         final productId = routeSettings.arguments;
         return MaterialPageRoute(
