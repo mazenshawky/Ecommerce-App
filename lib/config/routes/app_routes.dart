@@ -18,6 +18,7 @@ class AppRoutes {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.initialRoute:
+        // final userId = routeSettings.arguments;
         return MaterialPageRoute(
             builder: ((context) => MultiBlocProvider(
                   providers: [
@@ -28,6 +29,7 @@ class AppRoutes {
                       create: (context) => di.sl<CartCubit>(),
                     ),
                   ],
+                  // child: HomeScreen(userId: userId),
                   child: const HomeScreen(userId: 2),
                 )));
       case Routes.productDetailsRoute:

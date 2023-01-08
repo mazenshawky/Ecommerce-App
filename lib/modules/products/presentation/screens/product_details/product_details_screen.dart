@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/core/utils/app_colors.dart';
 import 'package:ecommerce_app/core/utils/app_values.dart';
 import 'package:ecommerce_app/core/utils/media_query_values.dart';
+import 'package:ecommerce_app/modules/products/presentation/components/my_button.dart';
 import 'package:ecommerce_app/modules/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -65,19 +66,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     );
   }
 
-  Widget _buildButton() {
-    return Center(
-      child: SizedBox(
-        width: AppSize.s200,
-        height: AppSize.s48,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text(AppStrings.addToCart),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,7 +113,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           _buildTitleAndPriceWidget(state.productDetails),
                           _buildDescription(state.productDetails),
                           const SizedBox(height: AppPadding.p24),
-                          _buildButton(),
+                          const MyButton(text: AppStrings.addToCart),
                         ],
                       ),
                     ),

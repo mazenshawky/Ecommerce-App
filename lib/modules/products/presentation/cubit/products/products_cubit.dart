@@ -16,6 +16,8 @@ class ProductsCubit extends Cubit<ProductsState> {
   ProductsCubit({required this.getAllProductsUseCase})
       : super(ProductsInitial());
 
+  List<Product> allProducts = [];
+
   Future<void> getAllProducts() async {
     emit(ProductsLoading());
     Either<Failure, List<Product>> response =
@@ -23,6 +25,9 @@ class ProductsCubit extends Cubit<ProductsState> {
 
     emit(response.fold(
         (failure) => ProductsError(message: Constants.mapFailureToMsg(failure)),
-        (products) => ProductsLoaded(products: products)));
+        (products) {
+      allProducts = products;
+      return ProductsLoaded(products: products);
+    }));
   }
 }

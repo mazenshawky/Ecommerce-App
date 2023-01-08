@@ -23,7 +23,7 @@ class SettingsPage extends StatelessWidget {
         children: [
           ListTile(
             leading:
-                const Icon(Icons.settings_outlined, color: AppColors.primary),
+                const Icon(Icons.language_outlined, color: AppColors.primary),
             title: Text(
               AppStrings.changeLanguage,
               style: Theme.of(context).textTheme.bodyLarge,

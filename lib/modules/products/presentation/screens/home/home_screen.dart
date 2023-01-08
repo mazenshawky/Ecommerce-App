@@ -11,7 +11,8 @@ import '../../cubit/cart/cart_cubit.dart';
 import '../../cubit/products/products_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
-  final int userId;
+  final dynamic userId;
+
   const HomeScreen({super.key, required this.userId});
 
   @override
