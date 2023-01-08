@@ -15,7 +15,6 @@ class AppStrings {
   static const String search = 'Search';
   static const String productDetails = 'Product Details';
   static const String totalPrice = 'Total Price: ';
-  static const String colors = 'Colors';
   static const String addToCart = 'Add to cart';
   static const String creditOrDebitCard = 'Credit card / Debit card';
   static const String cashOnDelivery = 'Cash on delivery';
@@ -34,4 +33,7 @@ class AppStrings {
   static const String contactUs = 'Contact Us';
   static const String inviteYourFriends = 'Invite Your Friends';
   static const String logout = 'Logout';
+  static const String englishCode = 'en';
+  static const String arabicCode = 'ar';
+  static const String locale = 'locale';
 }
