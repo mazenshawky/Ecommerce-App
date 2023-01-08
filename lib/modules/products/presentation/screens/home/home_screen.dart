@@ -3,6 +3,7 @@ import 'package:ecommerce_app/core/utils/app_strings.dart';
 import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/cart_page.dart';
 import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/checkout_page.dart';
 import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/products_page.dart';
+import 'package:ecommerce_app/modules/products/presentation/screens/home/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,12 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
     ProductsPage(),
     CartPage(),
     CheckoutPage(),
+    SettingsPage(),
   ];
 
   List<String> titles = [
     AppStrings.products,
     AppStrings.cart,
     AppStrings.checkout,
+    AppStrings.settings,
   ];
 
   String _title = AppStrings.products;
@@ -81,6 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(Icons.shopping_cart), label: AppStrings.cart),
             BottomNavigationBarItem(
                 icon: Icon(Icons.payment), label: AppStrings.checkout),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: AppStrings.settings),
           ],
         ),
       ),

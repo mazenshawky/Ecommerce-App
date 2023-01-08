@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/core/utils/app_fonts.dart';
 import 'package:ecommerce_app/core/utils/app_values.dart';
 import 'package:flutter/material.dart';
 
@@ -29,11 +28,6 @@ ThemeData lightTheme() {
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: AppSize.s0,
-      titleTextStyle: TextStyle(
-        color: AppColors.blackColor,
-        fontSize: FontSize.s20,
-        fontWeight: FontWeights.fw500,
-      ),
     ),
 
     // elevated button theme

@@ -11,7 +11,13 @@ class AppStrings {
   static const String products = 'Products';
   static const String cart = 'Cart';
   static const String checkout = 'Checkout';
+  static const String settings = 'Settings';
   static const String search = 'Search';
+  static const String productDetails = 'Product Details';
   static const String colors = 'Colors';
   static const String addToCart = 'Add to cart';
+  static const String changeLanguage = 'Change Language';
+  static const String contactUs = 'Contact Us';
+  static const String inviteYourFriends = 'Invite Your Friends';
+  static const String logout = 'Logout';
 }
